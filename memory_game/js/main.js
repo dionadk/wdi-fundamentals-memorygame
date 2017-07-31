@@ -23,7 +23,7 @@ var cards = [
 }
 ];
 
-
+var userScore = 0;
 var cardsInPlay = [];
 var checkForMatch = function()
 {
@@ -31,6 +31,9 @@ var checkForMatch = function()
 if(cardsInPlay[0] === cardsInPlay[1])
 	{
 		alert("You found a match!");
+
+		userScore += 1;
+		alert("Your score is " + userScore);
 		cardsInPlay = [];
 	}
 	else 
