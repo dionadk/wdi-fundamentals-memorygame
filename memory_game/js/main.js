@@ -30,6 +30,7 @@ var checkForMatch = function()
 	
 if(cardsInPlay[0] === cardsInPlay[1])
 	{
+
 		alert("You found a match!");
 
 		userScore += 1;
@@ -54,7 +55,7 @@ cardsInPlay.push(cards[cardId].rank);
 this.setAttribute('src',cards[cardId].cardImage);
 if (cardsInPlay.length === 2)
 	{
-checkForMatch();
+setTimeout(checkForMatch, 500);
 }
 };
 
@@ -71,11 +72,15 @@ document.getElementById('game-board').appendChild(cardElement);
 
 }
 };
-
 createBoard();
 
-//var resetButton = document.getElementById('btn');
-//resetButton.addEventListener('click',reset);
+var reset = function(){
+
+	location.reload(true);
+};
+
+var resetButton = document.getElementById('btn');
+resetButton.addEventListener('click',reset);
 
 
 
